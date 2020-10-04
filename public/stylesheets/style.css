@@ -2,3 +2,235 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 100vh;
+  }
+}
+
+.top-nav-collapse {
+  background-color: #cbb7d1 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #cbb7d1 !important;
+  }
+}
+
+h1 {
+  letter-spacing: 8px;
+}
+
+h5 {
+  letter-spacing: 3px;
+}
+
+.hr-light {
+  border-top: 3px solid #fff;
+  width: 80px;
+}
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #cbb7d1; }
+  }
+
+
+
+/* -------------- */
+
+
+
+  
+  #start-screen {
+      margin-bottom: 30px;
+  }
+  #start-screen:hover {
+      opacity:1;
+  }
+ 
+  .transbox {
+    background-color: #ffffff;
+    opacity: 0.8;
+  }
+
+  .box {
+      padding: .66rem;
+  }
+  
+  .box:not(:last-child) {
+      margin-bottom: 0rem;
+  }
+  
+  .fade-in {
+      animation: fadeIn ease 2s;
+      -webkit-animation: fadeIn ease 2s;
+      -moz-animation: fadeIn ease 2s;
+      -o-animation: fadeIn ease 2s;
+      -ms-animation: fadeIn ease 2s;
+    }
+  
+    @keyframes fadeIn {
+      0% {
+        opacity:0;
+      }
+      100% {
+        opacity:1;
+      }
+    }
+  
+  /* Mozilla */  
+  @-moz-keyframes fadeIn {
+      0% {
+        opacity:0;
+      }
+      100% {
+        opacity:1;
+      }
+    }
+  
+    /* Chrome */  
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity:0;
+      }
+      100% {
+        opacity:1;
+      }
+    }
+  
+      /* Opera */  
+      @-o-keyframes fadeIn {
+          0% {
+            opacity:0;
+          }
+          100% {
+            opacity:1;
+          }
+        }
+  
+        .fade-in-start {
+          animation: fadeInStart ease 1s;
+          -webkit-animation: fadeInStart ease 1s;
+  
+        }
+      
+        @keyframes fadeInStart {
+          0% {
+            opacity:0;
+          }
+          100% {
+            opacity:.8;
+          }
+        }
+      
+        /* Chrome */  
+        @-webkit-keyframes fadeInStart {
+          0% {
+            opacity:0;
+          }
+          100% {
+            opacity:.8;
+          }
+        }
+      
+
+        @keyframes glowing {
+          0% {
+            background-color: #2ba805;
+            box-shadow: 0 0 3px #2ba805;
+          }
+          50% {
+            background-color: #49e819;
+            box-shadow: 0 0 10px #49e819;
+          }
+          100% {
+            background-color: #2ba805;
+            box-shadow: 0 0 3px #2ba805;
+          }
+        }
+  
+    .fade-out {
+      animation: fadeOut ease 1s forwards;
+      -webkit-animation: fadeOut ease 1s forwards;
+      -moz-animation: fadeOut ease 1s forwards;
+      -o-animation: fadeOut ease 1s forwards;
+      -ms-animation: fadeOut ease 1s forwards;
+      display: none;
+    }
+  
+    @keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+      }
+    }
+  
+    @-moz-keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+  
+      }
+    }
+  
+    @-webkit-keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+      }
+    }
+  
+    @-o-keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+      }
+    }
+  
+    @-ms-keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+      }
+    }
+  
+  
+  
+    
+  
+    
