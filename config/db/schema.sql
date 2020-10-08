@@ -11,6 +11,7 @@ CREATE TABLE user (
 CREATE TABLE masterFood (
     id int NOT NULL AUTO_INCREMENT,
 	foodName VARCHAR (255) NOT NULL,
+    foodType VARCHAR (11) NOT NULL,
     foodCategory VARCHAR (255) NOT NULL,
     PRIMARY KEY (id)
 );
