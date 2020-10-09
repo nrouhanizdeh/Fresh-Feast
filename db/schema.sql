@@ -7,6 +7,7 @@ CREATE TABLE masterFood (
 	foodName VARCHAR (255) NOT NULL,
     user_id INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(id),
+    days INT (15) NOT NULL,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
