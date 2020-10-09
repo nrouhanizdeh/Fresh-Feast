@@ -1,4 +1,28 @@
 $(document).ready(function(){
+
+	$.get("/api/user_data").then(data => {
+		$("#test").text("APPLE");
+
+
+	  });
+	function getPosts(user) {
+		userId = user || "";
+		if (userId) {
+		  userId = "/?user_id=" + userId;
+		}
+		$.get("/api/items" + userId, function(data) {
+		  console.log("Items", data);
+		  items = data;
+		  if (!items || !items.length) {
+			displayEmpty(user);
+		  }
+		  else {
+			initializeRows();
+		  }
+		});
+	  }
+	
+
 	$('[data-toggle="tooltip"]').tooltip();
 	var actions = $("table td:last-child").html();
 	// Append table with add row form on add new button click
