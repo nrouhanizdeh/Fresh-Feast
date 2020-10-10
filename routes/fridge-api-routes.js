@@ -93,14 +93,15 @@ module.exports = function(app) {
       } else {
 
         db.masterFoods.update(
-            req.days,
+            req.body,
             {
             where: {
-                id: req.days.id
+                id: req.body.id
             }
             }).then(function(dbItem) {
             res.json(dbItem);
         });
     }
  });
+
 };

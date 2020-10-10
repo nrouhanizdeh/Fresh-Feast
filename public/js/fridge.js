@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
 	function submitItem(Item) {
-		$.post("/api/items/", Item, function () {
-			//window.location.href = "/members";
-			console.log("success");
-		});
+		$.post("/api/items/", Item).then(
+			// console.log("success");
+		);
 	}
+
 	var newItem = {};
 	//$('[data-toggle="tooltip"]').tooltip();
 	var actions = $("table td:last-child").html();
@@ -36,15 +36,15 @@ $(document).ready(function () {
 				empty = true;
 			} else {
 				$(this).removeClass("error");
-				newItem.foodName = $(this).val();
+				//newItem.foodName = $(this).val();
 			}
 		});
 
-		var inputFoodName = $(this).parents("tr").find('input[type="text"]');
+		var inputFoodName = $(this).parents("tr").find('input[name="foodName"]');
 		inputFoodName.each(function () {
 				newItem.foodName = $(this).val();
 		});
-		var inputDays = $(this).parents("tr").find('input[type="number"]');
+		var inputDays = $(this).parents("tr").find('input[name="days"]');
 		inputDays.each(function () {
 				newItem.days = $(this).val();
 			
@@ -58,15 +58,6 @@ $(document).ready(function () {
 			$(this).parents("tr").find(".add, .edit").toggle();
 			$(".add-new").removeAttr("disabled");
 		}
-		// for(let i=0; i<input.length;i++){
-		// 	console.log(input) ;
-		// }
-		//newItem.foodName = $(".foodName").val();
-		//newItem.foodName = "Apple";
-		//newItem.foodName = $("input[name='foodName']");
-		//newItem.days= $("input[name='days']");
-		//newItem.foodName = $("#foodName").val().trim();
-		//newItem.days = $("#days").val().trim();
 		submitItem(newItem);
 	});
 	// Edit row on edit button click
@@ -81,5 +72,13 @@ $(document).ready(function () {
 	$(document).on("click", ".delete", function () {
 		$(this).parents("tr").remove();
 		$(".add-new").removeAttr("disabled");
+		var id = $(this).parent().data("id");
+		$.ajax({
+		  method: "DELETE",
+		  url: "/api/items/" + id
+		})
+		  .then(
+			  console.log("deleted successfully!")
+		  );
 	});
 });
