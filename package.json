@@ -1,7 +1,7 @@
 {
-  "name": "1-Passport-Example",
+  "name": "freshfeast",
   "version": "1.0.0",
-  "description": "",
+  "description": "### Project Description",
   "main": "server.js",
   "scripts": {
     "test": "npm run lint",
@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "bcryptjs": "2.4.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
@@ -30,7 +31,16 @@
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
+    "handlebars": "^4.5.3",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nrouhanizdeh/Fresh-Feast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nrouhanizdeh/Fresh-Feast/issues"
+  },
+  "homepage": "https://github.com/nrouhanizdeh/Fresh-Feast#readme"
 }
