@@ -1,28 +1,11 @@
 $(document).ready(function(){
 
-	$.get("/api/user_data").then(data => {
-		$("#test").text("APPLE");
-
-
-	  });
-	function getPosts(user) {
-		userId = user || "";
-		if (userId) {
-		  userId = "/?user_id=" + userId;
-		}
-		$.get("/api/items" + userId, function(data) {
-		  console.log("Items", data);
-		  items = data;
-		  if (!items || !items.length) {
-			displayEmpty(user);
-		  }
-		  else {
-			initializeRows();
-		  }
+	function submitItem(Item) {
+		$.post("/api/items/", Item, function() {
+		  window.location.href = "/members";
 		});
 	  }
-	
-
+	var newItem = {};
 	$('[data-toggle="tooltip"]').tooltip();
 	var actions = $("table td:last-child").html();
 	// Append table with add row form on add new button click
@@ -30,9 +13,13 @@ $(document).ready(function(){
 		$(this).attr("disabled", "disabled");
 		var index = $("table tbody tr:last-child").index();
         var row = '<tr>' +
-            '<td><input type="text" class="form-control" name="item" id="name"></td>' +
-            '<td><input type="text" class="form-control" name="expiration" id="department"></td>' +
-			'<td>' + actions + '</td>' +
+            '<td><input type="text" class="form-control" name="item" id="foodName" placeholder="Add Item ..."></td>' +
+            '<td><input type="number" min="0" class="form-control" name="expiration" id="days" placeholder="Number of Days"></td>' +
+			'<td>'+
+			'<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>'+
+			'<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>'+
+			'<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>'+
+		  '</td>'+
         '</tr>';
     	$("table").append(row);		
 		$("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
@@ -41,13 +28,14 @@ $(document).ready(function(){
 	// Add row on add button click
 	$(document).on("click", ".add", function(){
 		var empty = false;
-		var input = $(this).parents("tr").find('input[type="text"]');
+		var input = $(this).parents("tr").find('input');
         input.each(function(){
 			if(!$(this).val()){
 				$(this).addClass("error");
 				empty = true;
 			} else{
-                $(this).removeClass("error");
+				$(this).removeClass("error");
+				
             }
 		});
 		$(this).parents("tr").find(".error").first().focus();
