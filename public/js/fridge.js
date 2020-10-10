@@ -15,7 +15,8 @@ $(document).ready(function () {
 		var index = $("table tbody tr:last-child").index();
 		var row = '<tr>' +
 			'<td><input type="text" class="form-control" name="foodName" id="foodName" placeholder="Add Item ..."></td>' +
-			'<td><input type="number" min="0" class="form-control" name="days" id="days" placeholder="Expiration in Days"></td>' +
+			'<td><input type="number" min="0" class="form-control expirationIn" name="days" id="days" placeholder="Expiration in Days"></td>' +
+			'<td><class="form-control expirationOut" name="expiration" id="department"></td>' +
 			'<td>' +
 			'<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>' +
 			'<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>' +
@@ -30,6 +31,56 @@ $(document).ready(function () {
 	$(document).on("click", ".add", function () {
 		var empty = false;
 		var input = $(this).parents("tr").find('input');
+		var dayInput = $(".expirationIn").val();
+		
+
+		// Prototype to execute data addition //
+		Date.prototype.addSetDays = function (days) {
+			var date = new Date(this.valueOf());
+			date.setDate(date.getDate() + days);
+			return date;
+		}
+		// Runs protoype based on user input - 'expirationDate' is the date at which the produce is set to expire
+		var date = new Date();
+
+
+		/// ****** Prototype below (defined on 49) works when integer is passed, but does not work when integer variable is passed /// 
+		var expirationDate = date.addSetDays(parseInt(dayInput));
+		console.log(expirationDate);
+
+		//---- Below is where the timer is, calculate and diplayed---//
+
+		// Update the count down every 1 second
+		var x = setInterval(function () {
+
+			// Gets current date and time
+			var now = new Date().getTime();
+			// Find the distance between now and the count down date
+			var distance = expirationDate - now;
+			// Time caluclation for Days (seconds included for testing)
+			var days = (Math.floor(distance / (1000 * 60 * 60 * 24)));
+
+			// Seconds include for testing (will be removed)
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			// HTML Output for testing (adding seconds for testing purposes only)//
+			var printDay = (days + " days left ");
+			console.log("This is the variable that needs to be written to <td>", printDay);
+			var answer = $(".expirationOut").text(printDay);
+		
+
+		
+
+			//<*** INSERT CODE TO WRITE 'printDay' variable to <td>****>//
+			// $("????").html(printDay)
+
+			// Once the countdown recahes zero, the table data cell is replaced with "EXPIRED"
+			if (distance < 0) {
+				clearInterval(x);
+				// $("????").html("EXPIRED");
+			}
+		}, 1000);
+
 		input.each(function () {
 			if (!$(this).val()) {
 				$(this).addClass("error");
@@ -42,12 +93,11 @@ $(document).ready(function () {
 
 		var inputFoodName = $(this).parents("tr").find('input[name="foodName"]');
 		inputFoodName.each(function () {
-				newItem.foodName = $(this).val();
+			newItem.foodName = $(this).val();
 		});
 		var inputDays = $(this).parents("tr").find('input[name="days"]');
 		inputDays.each(function () {
-				newItem.days = $(this).val();
-			
+			newItem.days = $(this).val();
 		});
 
 		$(this).parents("tr").find(".error").first().focus();
@@ -74,11 +124,11 @@ $(document).ready(function () {
 		$(".add-new").removeAttr("disabled");
 		var id = $(this).parent().data("id");
 		$.ajax({
-		  method: "DELETE",
-		  url: "/api/items/" + id
+			method: "DELETE",
+			url: "/api/items/" + id
 		})
-		  .then(
-			  console.log("deleted successfully!")
-		  );
+			.then(
+				console.log("deleted successfully!")
+			);
 	});
 });
