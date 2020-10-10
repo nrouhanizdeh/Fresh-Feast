@@ -52,16 +52,17 @@ module.exports = function(app) {
 
     if (!req.user) {
         // The user is not logged in, send back an empty object
-        res.json({email: "test"});
+        res.json({});
+
       } else {
 
-    db.Item.create({
-        foodName: req.body.foodName,
-        days: req.body.days
-      }).then(function(dbItem) {
-        res.json(dbItem);
-        });
-    }
+        db.masterFood.create({
+            foodName: req.body.foodName,
+            days: req.body.days
+        }).then(function(dbItem) {
+            res.json(dbItem);
+            });
+        }
 
   });
 
