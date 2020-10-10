@@ -1,6 +1,5 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
-const passport = require("../config/passport");
 
 module.exports = function(app) {
 
@@ -13,7 +12,7 @@ module.exports = function(app) {
          res.json({});
        } else {
         query.UserId = req.user.id;
-         db.masterFood.findAll({
+         db.masterFoods.findAll({
             where: query
           // include: [db.Users]
         }).then(function(dbItem) {
@@ -28,13 +27,13 @@ module.exports = function(app) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Users
-
+    var query ={};
     if (!req.user) {
         // The user is not logged in, send back an empty object
         res.json({});
       } else {
 
-    db.masterFood.findOne({
+    db.masterFoods.findOne({
         where: {
             id: req.params.id
         },
@@ -56,9 +55,10 @@ module.exports = function(app) {
 
       } else {
 
-        db.masterFood.create({
+        db.masterFoods.create({
             foodName: req.body.foodName,
-            days: req.body.days
+            days: req.body.days,
+            UserId: req.user.id
         }).then(function(dbItem) {
             res.json(dbItem);
             });
@@ -74,7 +74,7 @@ module.exports = function(app) {
         res.json({});
       } else {
 
-        db.masterFood.destroy({
+        db.masterFoods.destroy({
             where: {
                 id: req.params.id
             }
@@ -92,7 +92,7 @@ module.exports = function(app) {
         res.json({});
       } else {
 
-        db.masterFood.update(
+        db.masterFoods.update(
             req.days,
             {
             where: {
