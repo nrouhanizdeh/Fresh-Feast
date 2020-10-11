@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
 	function submitItem(Item) {
 		$.post("/api/items/", Item).then(
 			// console.log("success");
@@ -15,7 +16,7 @@ $(document).ready(function () {
 		var index = $("table tbody tr:last-child").index();
 		var row = '<tr>' +
 			'<td><input type="text" class="form-control" name="foodName" id="foodName" placeholder="Add Item ..."></td>' +
-			'<td><input type="number" min="0" class="form-control expirationIn" name="days" id="days" placeholder="Expiration in Days"></td>' +
+			'<td><div class="container"><div class="hero-unit"><input type="text" placeholder="click to show datepicker" id="pickyDate" /></div></td>' +
 			'<td><class="form-control expirationOut" name="expiration" id="department"></td>' +
 			'<td>' +
 			'<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>' +
