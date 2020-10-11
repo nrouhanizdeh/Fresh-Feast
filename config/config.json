@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "hwkshdwm",
+    "password": "password",
     "database": "freshFeast_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

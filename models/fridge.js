@@ -11,6 +11,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER , 
       allowNull: false,
       len: [1]
+    },
+    expire: {
+      type: DataTypes.DATE , 
+      allowNull: false,
+      len: [1]
     }
   });
 
