@@ -44,7 +44,6 @@ module.exports = function(app) {
         var hbsObject = {
           fridge: dbItem
           };
-        console.log(dbItem.masterFoods);
         res.render("members", hbsObject);
       });
   });

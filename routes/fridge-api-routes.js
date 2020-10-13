@@ -58,7 +58,8 @@ module.exports = function(app) {
         db.masterFoods.create({
             foodName: req.body.foodName,
             days: req.body.days,
-            expire: req.body.expire,
+            expireString: req.body.expireString,
+            expireDate: req.body.expireDate,
             UserId: req.user.id
         }).then(function(dbItem) {
             res.json(dbItem);
