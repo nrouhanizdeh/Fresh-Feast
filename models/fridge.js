@@ -12,7 +12,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     },
-    expire: {
+    expireString: {
+      type: DataTypes.STRING , 
+      allowNull: false,
+      len: [1]
+    },
+    expireDate: {
       type: DataTypes.DATE , 
       allowNull: false,
       len: [1]

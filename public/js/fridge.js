@@ -59,7 +59,8 @@ $(document).ready(function () {
 		var inputDays = $(this).parents("tr").find('input[name="days"]');
 		inputDays.each(function () {
 				newItem.days = $(this).val();
-				newItem.expire = date.addDays(parseInt($(this).val()));
+				newItem.expireDate = date.addDays(parseInt($(this).val()));
+				newItem.expireString = date.addDays(parseInt($(this).val())).toLocaleDateString();
 		});
 
 		$(this).parents("tr").find(".error").first().focus();
