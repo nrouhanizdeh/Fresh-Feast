@@ -64,6 +64,9 @@
 
   <!-- Main navigation -->
   <!--Main Layout-->
+    <v-flex v-for="(pic, index) in accomodation.images" v-bind:class="{flex30 : index % 2 == 0, flex20 : index % 2 != 0}">
+    <img height="auto" style="width:100%" :src="download.jpg"></img>
+    </v-flex>
 
   <script type="text/javascript" src="js/login.js"></script>
   <!-- JQuery -->

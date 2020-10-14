@@ -1,0 +1,1518 @@
+<style>
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+}
+</style>
+</head>
+<body>
+
+<div id="overlay" onclick="off()">
+  <div id="text"><table>
+  <tr>
+    <th>Fruits</th>
+    <th>Fridge</th>
+    <th>On the Shelf</th>
+  </tr>
+  <tr>
+    <td>Apples</td>
+    <td>3 weeks	</td>
+    <td>3-4 days</td>
+  </tr>
+  <tr>
+    <td>Apricots</td>
+    <td>2-3 days</td>
+    <td>Until ripe</td>
+  </tr>
+  <tr>
+    <td>Avocados</td>
+    <td>3-4 days</td>
+    <td>Until ripe</td>
+  </tr>
+  <tr>
+    <td>Bananas</td>
+    <td>2 days, skin will blacken</td>
+    <td>Until ripe</td>
+  </tr>
+  <tr>
+    <td>Berries/Cherries</td>
+    <td>1-2 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Citrus Fruits</td>
+    <td>1-2 weeks</td>
+    <td>10 days</td>
+  </tr>
+  <tr>
+    <td>Coconuts</td>
+    <td>2-3 weeks</td>
+    <td>1 week</td>
+  </tr>
+  <tr>
+    <td>Grapes</td>
+    <td>1 week</td>
+    <td>1 day</td>
+  </tr>
+  <tr>
+    <td>Kiwi</td>
+    <td>3-4 days</td>
+    <td>Until ripe</td>
+  </tr>
+  <tr>
+    <td>Melon</td>
+    <td>3-4 days</td>
+    <td>1-2 days</td>
+  </tr>
+  <tr>
+    <td>Papaya</td>
+    <td>1 week</td>
+    <td>3-5 days</td>
+  </tr>
+  <tr>
+    <td>Mango</td>
+    <td>1 week</td>
+    <td>3-5 days</td>
+  </tr>
+  <tr>
+    <td>Peaches</td>
+    <td>3-4 days</td>
+    <td>Until ripe</td>
+  </tr>
+  <tr>
+    <td>Nectarines</td>
+    <td>3-4 days</td>
+    <td>Until ripe</td>
+  </tr>
+  <tr>
+    <td>Pears</td>
+    <td>3-4 days</td>
+    <td>3-5 days</td>
+  </tr>
+  <tr>
+    <td>Plums</td>
+    <td>3-4 days</td>
+    <td>3-5 days</td>
+  </tr>
+  <tr>
+    <th>Veggies</th>
+    <th>Fridge</th>
+    <th>On the Shelf </th>
+  </tr>
+  <tr>
+    <td>Artichokes</td>
+    <td>1-2 weeks</td>
+    <td>1-2 days</td>
+  </tr>
+  <tr>
+    <td>Asparagus</td>
+    <td>3-4 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Beans</td>
+    <td>3-4 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Wax</td>
+    <td>3-4 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Beats</td>
+    <td>7-10 days</td>
+    <td>1 day</td>
+  </tr>  
+  <tr>
+    <td>Cabbage</td>
+    <td>1-2 weeks</td>
+    <td>1 day</td>
+  </tr>
+  <tr>
+    <td>Carrots</td>
+    <td>2 weeks</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Parsnips</td>
+    <td>2 weeks</td>
+    <td>Refridgerate</td>
+  </tr>  
+  <tr>
+    <td>Celery</td>
+    <td>1-2 weeks</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Cucumbers</td>
+    <td>4-5 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Eggplants</td>
+    <td>3-4 days</td>
+    <td>1 day</td>
+  </tr>  
+  <tr>
+    <td>Garlic</td>
+    <td>1-2 weeks</td>
+    <td>2 days</td>
+  </tr>
+  <tr>
+    <td>Ginger Root</td>
+    <td>1-2 weeks</td>
+    <td>2 days</td>
+  </tr>
+  <tr>
+    <td>Greens</td>
+    <td>1-2 days</td>
+    <td>Refridgerate</td>
+  </tr>  
+  <tr>
+    <td>Herbs</td>
+    <td>7-10 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Leeks</td>
+    <td>1-2 weeks</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Lettuce</td>
+    <td>1-2 weeks</td>
+    <td>Refridgerate</td>
+  </tr>  
+  <tr>
+    <td>Mushrooms</td>
+    <td>2-3 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Okra</td>
+    <td>2-3 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Onions</td>
+    <td>2 months</td>
+    <td>2-3 weeks</td>
+  </tr>  
+  <tr>
+    <td>Peppers</td>
+    <td>4-5 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Potatoes</td>
+    <td>1-2 weeks</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Rutabagas</td>
+    <td>2 weeks</td>
+    <td>1 week</td>
+  </tr>  
+  <tr>
+    <td>Spinach</td>
+    <td>1-2 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Squash</td>
+    <td>4-5 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Winter</td>
+    <td>2 weeks</td>
+    <td>1 week</td>
+  </tr>  
+  <tr>
+    <td>Turnips</td>
+    <td>2 weeks</td>
+    <td>Refridgerate</td>
+  </tr>  
+  <tr>
+    <td>Tomatoes</td>
+    <td>2-3 days</td>
+    <td>Until ripe</td>
+  </tr>
+  <tr>
+    <th>Bakery Item</th>
+    <th>Fridge</th>
+    <th>On the Shelf</th>
+  </tr>
+  <tr>
+    <td>Bread</td>
+    <td>7-14 days</td>
+    <td>2-4 days</td>
+  </tr>  
+  <tr>
+    <td>tortillas; Pita</td>
+    <td>4-7 days</td>
+    <td>2-4 days</td>
+  </tr>  
+  <tr>
+    <td>Cakes, Angel Food</td>
+    <td>7 days</td>
+    <td>1-2 days</td>
+  </tr>
+  <tr>
+    <td>Chiffon, sponge</td>
+    <td>7 days</td>
+    <td>1-2 days</td>
+  </tr>
+  <tr>
+    <td>Chocolate</td>
+    <td>7 days</td>
+    <td>1-2 days</td>
+  </tr>   
+  <tr>
+    <td>Fruit cake</td>
+    <td>6 months</td>
+    <td>1 month</td>
+  </tr>
+  <tr>
+    <td>Made from mix</td>
+    <td>7 days</td>
+    <td>3-4 days</td>
+  </tr>
+  <tr>
+    <td>Pound cake</td>
+    <td>7 days</td>
+    <td>3-4 days</td>
+  </tr>
+  <tr>
+    <td>Cheesecake</td>
+    <td>7 days</td>
+    <td>Refridgerate</td>
+  </tr>  
+  <tr>
+    <td>Cookies, bakery or homemade</td>
+    <td>2 months</td>
+    <td>2-3 weeks</td>
+  </tr>
+  <tr>
+    <td>Croissants, butter</td>
+    <td>7 days</td>
+    <td>1 day</td>
+  </tr>
+  <tr>
+    <td>Doughnuts, glazed or cake</td>
+    <td>7 days</td>
+    <td>1-2 days</td>
+  </tr>
+  <tr>
+    <td>dairy cream-filled</td>
+    <td>3-4 days</td>
+    <td>Refridgerate</td>
+  </tr>  
+  <tr>
+    <td>Muffins</td>
+    <td>3-4 days</td>
+    <td>2 days</td>
+  </tr>
+  <tr>
+    <td>Pastries, Danish</td>
+    <td>7 days</td>
+    <td>1-2 days</td>
+  </tr>
+  <tr>
+    <td>Pies, cream</td>
+    <td>3-4 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Chiffon</td>
+    <td>1-2 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Mincemeat</td>
+    <td>7 days</td>
+    <td>1-2 days</td>
+  </tr>
+  <tr>
+    <td>Pecan</td>
+    <td>3-4 days</td>
+    <td>Refridgerate</td>
+  </tr>
+  <tr>
+    <td>Pumpkin</td>
+    <td>3-4 days</td>
+    <td>Refridgerate</td>
+  </tr>  
+  <tr>
+    <td>Quiche</td>
+    <td>7 days</td>
+    <td>3-4 days</td>
+  </tr>
+  <tr>
+    <td>Rolls, yeast, baked</td>
+    <td>7 days</td>
+    <td>Use by Date</td>
+  </tr>
+  <tr>
+    <td>filled, meat or vegetables</td>
+    <td>3-4 days</td>
+    <td>Refridgerate</td>
+  </tr>  
+  <tr>
+    <th>Baby food jars & cans</th>
+    <th>Opened Fridge</th>
+    <th>Unopened On On the Shelf</th>
+  </tr>
+  <tr>
+    <td>Fruits & vegetables</td>
+    <td>2-3 days</td>
+    <td>2 months after date</td>
+  </tr>
+  <tr>
+    <td>Meats & eggs</td>
+    <td>1 day</td>
+    <td>2 months after date</td>
+  </tr>  
+  <tr>
+    <td>Cereal, dry mixes</td>
+    <td>Keep on Shelf</td>
+    <td>Use-by date</td>
+  </tr>
+  <tr>
+    <td>Formula</td>
+    <td>1-2 days</td>
+    <td>Use-by date</td>
+  </tr>
+  <tr>
+    <th>Baking Ingredients</th>
+    <th>Opened Fridge</th>
+    <th>Unopened On the Shelf</th>
+    <th>Opened On the Shelf</th>
+  </tr>  
+  <tr>
+    <td>Baking powder</td>
+    <td></td>
+    <td>6 months</td>
+    <td>3 months</td>
+  </tr>
+  <tr>
+    <td>Baking soda</td>
+    <td></td>
+    <td>18 months</td>
+    <td>6 months</td>
+  </tr>
+  <tr>
+    <td>Biscuit or pancake mix</td>
+    <td></td>
+    <td>15 months</td>
+    <td>use-by date</td>
+  </tr>  
+  <tr>
+    <td>Cake, brownie and bread mixes</td>
+    <td></td>
+    <td>12-18 months</td>
+    <td>use-by date</td>
+  </tr>
+  <tr>
+    <td>Cornmeal, regular degerminated</td>
+    <td>12 months</td>
+    <td>6-12 months</td>
+    <td>Used by date</td>
+  </tr>
+  <tr>
+    <td>stone ground or blue</td>
+    <td>2-3 months</td>
+    <td>1 month</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Cornstarch</td>
+    <td>Leave on the shelf</td>
+    <td>18 months</td>
+    <td>18 months</td>
+  </tr>
+  <tr>
+    <td>Flour, white</td>
+    <td>Leave on the shelf</td>
+    <td>6-12 months</td>
+    <td>6-8 months</td>
+  </tr>
+  <tr>
+    <td>Flour, whole wheat</td>
+    <td>6-8 months</td>
+    <td>1 month</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Frosting, canned</td>
+    <td>1 week</td>
+    <td>10 months</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Frosting mixes</td>
+    <td></td>
+    <td>12 months</td>
+    <td>3 months</td>
+  </tr>  
+  <tr>
+    <td>Beans, dried</td>
+    <td></td>
+    <td>12 months</td>
+    <td>12 months</td>
+  </tr>
+  <tr>
+    <td>Canned goods, low acid</td>
+    <td>3-4 days</td>
+    <td>2-5 years</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Canned goods, high acid</td>
+    <td>5-7 days</td>
+    <td>12-18 months</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Cereal, ready-to-eat</td>
+    <td></td>
+    <td>6-12 months</td>
+    <td>3 months</td>
+  </tr>
+  <tr>
+    <td>Cereal, cook-before-eat</td>
+    <td></td>
+    <td>12 months</td>
+    <td>6-12 months</td>
+  </tr>
+  <tr>
+    <td>Chocolate</td>
+    <td></td>
+    <td>18-24 months</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Chocolate syrup</td>
+    <td></td>
+    <td>6 months</td>
+    <td>1 years</td>
+  </tr>  
+  <tr>
+    <td>Cocoa and cocoa mixes</td>
+    <td></td>
+    <td>indefinitely</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <th>Coffee</th>
+    <th>Opened Fridge</th>
+    <th>Unopened On the Shelf</th>
+    <th>Opened On the Shelf</th>
+  </tr>
+  <tr>
+    <td>Whole beans, non-vacuum bag</td>
+    <td>3-4 months frozen</td>
+    <td>1-3 weeks</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Ground, in cans</td>
+    <td>2 weeks</td>
+    <td>2 years</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Instant, jars and tins</td>
+    <td></td>
+    <td>12 months</td>
+    <td>2-3 months</td>
+  </tr>
+  <tr>
+    <th>Condiments</th>
+    <th>Opened Fridge</th>
+    <th>Unopened On the Shelf</th>
+    <th>Opened On the Shelf</th>
+  </tr>
+  <tr>
+    <td>Barbecue sauce, bottled</td>
+    <td>4 months</td>
+    <td>12 months</td>
+    <td>1 month</td>
+  </tr>
+  <tr>
+    <td>Catsup, tomato; cocktail sauce or chili sauce</td>
+    <td>6 months</td>
+    <td>12 months</td>
+    <td>1 month</td>
+  </tr>
+  <tr>
+    <td>Chutney</td>
+    <td>1-2 months</td>
+    <td>12 months</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Horseradish, in jar</td>
+    <td>3-4 months</td>
+    <td>12 months</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mayonnaise, commercial</td>
+    <td>2 months</td>
+    <td>2-3 months</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Mustard</td>
+    <td>1 year</td>
+    <td>12 months</td>
+    <td>1-2 months</td>
+  </tr>  
+  <tr>
+    <td>Olives, black and green</td>
+    <td>2 weeks</td>
+    <td>12 -18 months</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Pickles</td>
+    <td>1-2 months</td>
+    <td>12 months</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Salad dressings, commercial, bottled</td>
+    <td>3 months</td>
+    <td>10-12 months</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Salsa, picante and taco sauces</td>
+    <td>1 month</td>
+    <td>12 months</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Cookies, packaged</td>
+    <td>8-12 months frozen</td>
+    <td>2 months</td>
+    <td>4 weeks</td>
+  </tr>  
+  <tr>
+    <td>Crackers</td>
+    <td>3-4 months</td>
+    <td>8 months</td>
+    <td>1 month</td>
+  </tr>
+  <tr>
+    <td>Diet powder mixes</td>
+    <td></td>
+    <td>6 months</td>
+    <td>3 months</td>
+  </tr>
+  <tr>
+    <td>Extracts, vanilla, lemon, etc.</td>
+    <td></td>
+    <td>3 years</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Fruits, dried</td>
+    <td>6 months</td>
+    <td>6 months</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Garlic, chopped, commercial jars</td>
+    <td>use by date on jar</td>
+    <td>18 months</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Gelatin, flavored</td>
+    <td></td>
+    <td>18 months</td>
+    <td>reseal 4 months</td>
+  </tr>
+  <tr>
+    <td>Gelatin, unflavored</td>
+    <td></td>
+    <td>3 years</td>
+    <td>reseal 4 months</td>
+  </tr> 
+  <tr>
+    <td>Gravy, jars & cans</td>
+    <td>1-2 days</td>
+    <td>2-5 years</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dry gravy mixes</td>
+    <td></td>
+    <td>2 years</td>
+    <td>Mix entire packet</td>
+  </tr>  
+  <tr>
+    <td>Herbs, dried</td>
+    <td></td>
+    <td>1-2 years</td>
+    <td>Store in cool dark place 1 year</td>
+  </tr>
+  <tr>
+    <td>Honey</td>
+    <td></td>
+    <td>1 year</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Jams, jellies, preserves</td>
+    <td>6 months</td>
+    <td>12 months</td>
+    <td></td>
+  </tr> 
+  <tr>
+    <td>Juice, boxes</td>
+    <td>8-12 days</td>
+    <td>4-6 months</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Lentils, dried</td>
+    <td></td>
+    <td>1 year</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Maple syrup, pure genuine</td>
+    <td>1 year</td>
+    <td>1 year</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Marshmallows, marshmallow creme</td>
+    <td></td>
+    <td>2-4 months</td>
+    <td>1 month</td>
+  </tr> 
+  <tr>
+    <td>Milk, canned evaporated</td>
+    <td>4-5 days</td>
+    <td>1 year</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Molasses</td>
+    <td></td>
+    <td>1 year</td>
+    <td>6 months</td>
+  </tr>
+  <tr>
+    <td>Mushrooms, dried</td>
+    <td></td>
+    <td>6 months</td>
+    <td>3 months</td>
+  </tr>
+  <tr>
+    <td>Oils, olive or vegetable</td>
+    <td></td>
+    <td>6 months</td>
+    <td>4-6 months</td>
+  </tr>  
+  <tr>
+    <td>walnut, macadamia, other nut oils</td>
+    <td>4 months</td>
+    <td>6 months</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>vegetable oil sprays</td>
+    <td></td>
+    <td>2 years</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Nuts, jars or cans</td>
+    <td>4-6 months</td>
+    <td>12 months</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Pasta, dry, made without eggs</td>
+    <td></td>
+    <td>2 years</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>dry egg noodles</td>
+    <td></td>
+    <td>2 years</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Peanut butter, commercial</td>
+    <td></td>
+    <td>6-9 months</td>
+    <td>2-3 months</td>
+  </tr>  
+  <tr>
+    <td>Peas, dried split</td>
+    <td></td>
+    <td>12 months</td>
+    <td>12 months</td>
+  </tr>  
+  <tr>
+    <td>Pectin</td>
+    <td></td>
+    <td>Use by package date</td>
+    <td>1 month
+    </td>
+  </tr>
+  <tr>
+    <td>Popcorn, dry kernels in jar</td>
+    <td></td>
+    <td>2 years</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Popcorn in bags</td>
+    <td></td>
+    <td>2-3 months</td>
+    <td>1-2 weeks</td>
+  </tr> 
+  <tr>
+    <td>Microwave packets</td>
+    <td></td>
+    <td>12 months</td>
+    <td>1-2 days</td>
+  </tr>  
+  <tr>
+    <td>Potato chips</td>
+    <td></td>
+    <td>2 months</td>
+    <td>1-2 weeks</td>
+  </tr>
+  <tr>
+    <td>Potatoes, instant</td>
+    <td></td>
+    <td>6-12 months</td>
+    <td>6-12 months</td>
+  </tr>
+  <tr>
+    <td>Pudding mixes</td>
+    <td></td>
+    <td>12 months</td>
+    <td>3-4 months</td>
+  </tr>  
+  <tr>
+    <td>Rice, white or wild</td>
+    <td></td>
+    <td>2 years</td>
+    <td>1 year</td>
+  </tr>  
+  <tr>
+    <td>brown</td>
+    <td>6 months</td>
+    <td>1 year</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>flavored or herb mixes</td>
+    <td></td>
+    <td>6 months</td>
+    <td>use entire amount</td>
+  </tr>
+  <tr>
+    <td>Sauce mixes, non dairy (spaghetti, taco, etc.)</td>
+    <td></td>
+    <td>2 years</td>
+    <td>use entire amount</td>
+  </tr>
+  <tr>
+    <td>cream sauces with milk solids</td>
+    <td></td>
+    <td>1 year</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Shortening, solid</td>
+    <td></td>
+    <td>8 months</td>
+    <td>3 months</td>
+  </tr>
+  <tr>
+    <th>Soda</th>
+    <th>Opened Fridge</th>
+    <th>Unopened On the Shelf</th>
+    <th>Opened On the Shelf</th>
+  </tr>
+  <tr>
+    <td>Diet sodas, bottles or cans</td>
+    <td>2-3 days</td>
+    <td>3 months after date</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Regular sodas, bottles</td>
+    <td>2-3 days</td>
+    <td>3 months after date</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Regular sodas, cans</td>
+    <td></td>
+    <td>9 months after date</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Soup mixes</td>
+    <td></td>
+    <td>12 months</td>
+    <td>Use entire amount</td>
+  </tr>
+  <tr>
+    <td>Spices, whole</td>
+    <td></td>
+    <td>2-4 years</td>
+    <td>sealed 1 year</td>
+  </tr>  
+  <tr>
+    <td>ground</td>
+    <td></td>
+    <td>2-3 years</td>
+    <td>sealed 1 year</td>
+  </tr>  
+  <tr>
+    <td>Paprika, red pepper, chili powder</td>
+    <td></td>
+    <td>2 years</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Sugar, brown</td>
+    <td></td>
+    <td></td>
+    <td>Sugar nevers spoils</td>
+  </tr>
+  <tr>
+    <td>Granulated</td>
+    <td></td>
+    <td></td>
+    <td>Sugar nevers spoils</td>
+  </tr> 
+  <tr>
+    <td>Confectioners</td>
+    <td></td>
+    <td>18 months</td>
+    <td></td>
+  </tr> 
+  <tr>
+    <td>Sugar substitutes</td>
+    <td></td>
+    <td>2 years</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>Syrup, pancake, maple, and other flavors</td>
+    <td></td>
+    <td>1 year</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Tapioca</td>
+    <td></td>
+    <td>1 year</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Tea, bags</td>
+    <td></td>
+    <td>18 months</td>
+    <td>1 year</td>
+  </tr>  
+  <tr>
+    <td>Loose</td>
+    <td></td>
+    <td>2 years</td>
+    <td>6-12 months</td>
+  </tr>  
+  <tr>
+    <td>Instant</td>
+    <td></td>
+    <td>3 years</td>
+    <td>6-12 months</td>
+  </tr>
+  <tr>
+    <td>Toaster pastries, fruit filled</td>
+    <td></td>
+    <td>6 months</td>
+    <td>Keep foil packets sealed</td>
+  </tr>
+  <tr>
+    <td>non-fruit fillings</td>
+    <td></td>
+    <td>9 months</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Tomatoes, sun dried, packed in oil</td>
+    <td>6-12 months</td>
+    <td>12 months</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td>packed in cellophane</td>
+    <td></td>
+    <td>9 months</td>
+    <td>3-6 months</td>
+  </tr>
+  <tr>
+    <td>Vinegar</td>
+    <td></td>
+    <td>2 years</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Yeast, dry, packets and jars</td>
+    <td>Refrigerate open jars</td>
+    <td>Use-by date</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Water, bottled</td>
+    <td></td>
+    <td>1-2 years</td>
+    <td>3 months</td>
+  </tr>  
+  <tr>
+    <td>Worcestershire sauce</td>
+    <td></td>
+    <td>1 year</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <th>Product</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>
+  <tr>
+    <td>Beverages, fruit</td>
+    <td>3 weeks unopened</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Juice in cartons, fruit drinks, punch</td>
+    <td>7-10 days open</td>
+    <td>8-12 months</td>
+  </tr>  
+  <tr>
+    <th>Condiments</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>
+  <tr>
+    <td>Refrigerated pesto, salsa</td>
+    <td>Date on carton; 3 days after opening</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Sour cream-based dip</td>
+    <td>2 weeks</td>
+    <td>Do NOT freeze</td>
+  </tr>  
+  <tr>
+    <th>Dairy Products</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>
+  <tr>
+    <td>Butter</td>
+    <td>1-3 months</td>
+    <td>6-9 months</td>
+  </tr>
+  <tr>
+    <td>Buttermilk</td>
+    <td>7-14 days</td>
+    <td>3 months</td>
+  </tr>  
+  <tr>
+    <td>Cheese, hard (Cheddar, Swiss)</td>
+    <td>6 months unopened; 3-4 weeks opened</td>
+    <td>6 months</td>
+  </tr>
+  <tr>
+    <td>Cheese, soft (Brie, Bel Paese)</td>
+    <td>1 week</td>
+    <td>6 months</td>
+  </tr>
+  <tr>
+    <td>Cottage cheese, Ricotta</td>
+    <td>1 week</td>
+    <td>do NOT freeze</td>
+  </tr>  
+  <tr>
+    <td>Cream cheese</td>
+    <td>2 weeks</td>
+    <td>do NOT freeze</td>
+  </tr> 
+  <tr>
+    <td>Cream whipping, ultrapasteurized</td>
+    <td>1 month</td>
+    <td>Do NOT freeze</td>
+  </tr>
+  <tr>
+    <td>Whipped, sweetened</td>
+    <td>1 day</td>
+    <td>1-2 months</td>
+  </tr>  
+  <tr>
+    <td>Aerosol can, real whipped cream</td>
+    <td>3-4 weeks</td>
+    <td>do NOT freeze</td>
+  </tr>
+  <tr>
+    <td>Aerosol can, non-dairy topping</td>
+    <td>3 months</td>
+    <td>Do NOT freeze</td>
+  </tr>
+  <tr>
+    <td>Cream, Half and Half</td>
+    <td>3-4 days</td>
+    <td>4 months</td>
+  </tr>  
+  <tr>
+    <th>Eggs</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr> 
+  <tr>
+    <td>unopened substitutes, liquid</td>
+    <td>10 days</td>
+    <td>IF labeled</td>
+  </tr>
+  <tr>
+    <td>opened substitutes, liquid</td>
+    <td>3 days</td>
+    <td>Do NOT freeze</td>
+  </tr>
+  <tr>
+    <td>Eggnog, commercial</td>
+    <td>3-5 days</td>
+    <td>6 months</td>
+  </tr>  
+  <tr>
+    <td>Eggs, in shell</td>
+    <td>3-5 weeks</td>
+    <td>do NOT freeze</td>
+  </tr>
+  <tr>
+    <td>Raw whites</td>
+    <td>2-4 days</td>
+    <td>1 year</td>
+  </tr>
+  <tr>
+    <td>Raw yolks</td>
+    <td>2-4 days</td>
+    <td>does not freeze well</td>
+  </tr>  
+  <tr>
+    <td>Hard cooked</td>
+    <td>1 week</td>
+    <td>does not freeze well</td>
+  </tr>
+  <tr>
+    <td>Margarine</td>
+    <td>4-5 months</td>
+    <td>1 year</td>
+  </tr>  
+  <tr>
+    <td>Milk</td>
+    <td>7 days</td>
+    <td>3 months</td>
+  </tr>
+  <tr>
+    <td>Pudding</td>
+    <td>Package date; 2 days after opening</td>
+    <td>do NOT freeze</td>
+  </tr>
+  <tr>
+    <td>Sour cream</td>
+    <td>7-21 days</td>
+    <td>does not freeze well</td>
+  </tr>  
+  <tr>
+    <td>Yogurt</td>
+    <td>1-2 weeks</td>
+    <td>1-2 months</td>
+  </tr>  
+  <tr>
+    <th>Deli foods</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>
+  <tr>
+    <td>Entrees, cold or hot</td>
+    <td>3-4 days</td>
+    <td>2-3 months</td>
+  </tr>  
+  <tr>
+    <td>Store-sliced lunch meats</td>
+    <td>3-5 days</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Salads</td>
+    <td>3-5 days</td>
+    <td>do NOT freeze</td>
+  </tr>
+  <tr>
+    <th>Dough</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>  
+  <tr>
+    <td>Tube cans of biscuits, rolls, pizza dough, etc.</td>
+    <td>Use-by date</td>
+    <td>do NOT freeze</td>
+  </tr>  
+  <tr>
+  <tr>
+    <td>Ready-to-bake pie crust</td>
+    <td>Use-by date</td>
+    <td>2 months</td>
+  </tr>
+  <tr>
+    <td>Cookie dough</td>
+    <td>Use-by date, unopened or opened</td>
+    <td>2 months</td>
+  </tr>  
+  <tr>
+    <th>Shellfish</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>  
+  <tr>
+    <td>Shrimp, scallops, crayfish, squid</td>
+    <td>1-2 days</td>
+    <td>3-6 months</td>
+  </tr>
+  <tr>
+    <td>Shucked clams, mussels and oysters</td>
+    <td>1-2 days</td>
+    <td>3-6 months</td>
+  </tr>  
+  <tr>
+    <td>Live clams, mussels, crab, lobster and oysters</td>
+    <td>2-3 days</td>
+    <td>2-3 months</td>
+  </tr>
+  <tr>
+    <td>Cooked shellfish</td>
+    <td>3-4 days</td>
+    <td>3 months</td>
+  </tr>
+  <tr>
+    <th>Meat, fresh</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>  
+  <tr>
+    <td>Beef, lamb, pork, or veal chops; Steaks, roasts</td>
+    <td>3-5 days</td>
+    <td>4-12 months</td>
+  </tr>
+  <tr>
+    <td>Ground meat</td>
+    <td>1-2 days</td>
+    <td>3-4 months</td>
+  </tr>
+  <tr>
+    <td>Variety meats (liver, tongue, chitterlings, etc.)</td>
+    <td>1-2 days</td>
+    <td>3-4 months</td>
+  </tr>  
+  <tr>
+    <td>cooked meats (home cooking)</td>
+    <td>3-4 days</td>
+    <td>2-3 months</td>
+  </tr>
+  <tr>
+    <th>Meat, Smoked or Processed</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>
+  <tr>
+    <td>Bacon</td>
+    <td>7 days</td>
+    <td>1 month</td>
+  </tr>  
+  <tr>
+    <td>Corned beef, in pouch with juices</td>
+    <td>5-7 days</td>
+    <td>1 month</td>
+  </tr>
+  <tr>
+    <td>Ham, canned ("keep refrig." label)</td>
+    <td>6-9 months</td>
+    <td>not in can</td>
+  </tr>
+  <tr>
+    <td>Ham, fully cooked, whole</td>
+    <td>1 week</td>
+    <td>1-2 months</td>
+  </tr>  
+  <tr>
+    <td>Ham, fully cooked, slices or halves</td>
+    <td>3-4 days</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Ham, cooked before eating</td>
+    <td>1 week</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Hot dogs, sealed in package	</td>
+    <td>2 weeks</td>
+    <td>1-2 months</td>
+  </tr>  
+  <tr>
+    <td>Hot dogs, after opening</td>
+    <td>3-5 days</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Lunch meats, sealed in package</td>
+    <td>2 weeks</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Lunch meats, after opening</td>
+    <td>3-5 days</td>
+    <td>1-2 months</td>
+  </tr>  
+  <tr>
+    <td>Sausage, raw, bulk type</td>
+    <td>1-2 days</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Sausage, smoked links, patties</td>
+    <td>1 week</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Sausage, hard, dry (pepperoni), sliced</td>
+    <td>2-3 weeks</td>
+    <td>1-2 months</td>
+  </tr>  
+  <tr>
+    <td>Pasta, fresh</td>
+    <td>1-2 days or package date</td>
+    <td>2 months</td>
+  </tr>
+  <tr>
+    <th>Poultry, fresh</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>
+  <tr>
+    <td>Chicken or turkey, whole</td>
+    <td>1-2 days</td>
+    <td>12 months</td>
+  </tr>  
+  <tr>
+    <td>Chicken or turkey, parts</td>
+    <td>1-2 days</td>
+    <td>9 months</td>
+  </tr>
+  <tr>
+    <td>Duckling or goose, whole</td>
+    <td>1-2 days</td>
+    <td>6 6 months</td>
+  </tr>
+  <tr>
+    <td>Giblets</td>
+    <td>1-2 days</td>
+    <td>3-4 months</td>
+  </tr>  
+  <tr>
+    <th>Poultry, cooked or processed</th>
+    <th>Fridge</th>
+    <th>Frozen</th>
+  </tr>
+  <tr>
+    <td>Chicken nuggets, patties</td>
+    <td>1-2 days</td>
+    <td>1-3 months</td>
+  </tr>
+  <tr>
+    <td>Cooked poultry dishes</td>
+    <td>3-4 days</td>
+    <td>4-6 months</td>
+  </tr>  
+  <tr>
+    <td>Fried chicken</td>
+    <td>3-4 days</td>
+    <td>4 months</td>
+  </tr>
+  <tr>
+    <td>Ground turkey or chicken</td>
+    <td>1-2 days</td>
+    <td>3-4 months</td>
+  </tr>
+  <tr>
+    <td>Lunch meats, sealed in package</td>
+    <td>2 weeks</td>
+    <td>1-2 months</td>
+  </tr>  
+  <tr>
+    <td>Lunch meats, after opening</td>
+    <td>3-5 days</td>
+    <td>1-2 months</td>
+  </tr>
+  <tr>
+    <td>Pieces covered with broth or gravy</td>
+    <td>1-2 days</td>
+    <td>6 months</td>
+  </tr>
+  <tr>
+    <td>Rotisserie chicken</td>
+    <td>3-4 days</td>
+    <td>4 months</td>
+  </tr>  
+  <tr>
+    <th>Frozen item</th>
+    <th>Freezer</th>
+    <th>In refrigerator after thawing</th>
+  </tr>
+  <tr>
+    <td>Bagels</td>
+    <td>2 months</td>
+    <td>1-2 weeks</td>
+  </tr>
+  <tr>
+    <td>Bread dough, commercial</td>
+    <td>Use-by date</td>
+    <td>After baking, 4-7 days</td>
+  </tr>  
+  <tr>
+    <td>Burritos, sandwiches</td>
+    <td>2 months</td>
+    <td>3-4 days</td>
+  </tr>
+  <tr>
+    <td>Egg substitutes</td>
+    <td>1 year</td>
+    <td>Date on carton</td>
+  </tr>
+  <tr>
+    <td>Fish, breaded</td>
+    <td>3 months</td>
+    <td>Do not defrost. Cook frozen</td>
+  </tr>  
+  <tr>
+    <td>Fish, raw</td>
+    <td>6 months</td>
+    <td>1 day</td>
+  </tr>
+  <tr>
+    <td>Fruit such as berries, melons</td>
+    <td>4-6 months</td>
+    <td>4-5 days</td>
+  </tr>
+  <tr>
+    <td>Guacamole</td>
+    <td>3-4 months</td>
+    <td>3-4 days</td>
+  </tr>  
+  <tr>
+    <td>Ice cream</td>
+    <td>2-4 months</td>
+    <td>Unavailable</td>
+  </tr>
+  <tr>
+    <td>Juice concentrates</td>
+    <td>6-12 months</td>
+    <td>7-10 days</td>
+  </tr>
+  <tr>
+    <td>Lobster tails</td>
+    <td>3 months</td>
+    <td>2 days</td>
+  </tr>  
+  <tr>
+    <td>Pancakes, waffles</td>
+    <td>2 months</td>
+    <td>3-4 days</td>
+  </tr>
+  <tr>
+    <td>Sausages, uncooked</td>
+    <td>1-2 months</td>
+    <td>1-2 days</td>
+  </tr>
+  <tr>
+    <td>Sausages, precooked</td>
+    <td>1-2 months</td>
+    <td>1 week</td>
+  </tr>  
+  <tr>
+    <td>Sherbert, sorbet</td>
+    <td>2-4 months</td>
+    <td>FREEZER</td>
+  </tr>
+  <tr>
+    <td>Shrimp, shellfish</td>
+    <td>1 year</td>
+    <td>1 day</td>
+  </tr>
+  <tr>
+    <td>Topping, whipped</td>
+    <td>6 months</td>
+    <td>2 weeks</td>
+  </tr>  
+  <tr>
+    <td>TV dinners, entrees, breakfast</td>
+    <td>3 months</td>
+    <td>Do not defrost. Cook frozen.</td>
+  </tr>
+  <tr>
+    <td>Vegetables</td>
+    <td>8 months</td>
+    <td>3-4 days</td>
+  </tr>
+</table>
+</div>
+</div>
+
+<div style="padding:20px">
+  <button onclick="on()">Info</button>
+</div>
