@@ -13,12 +13,26 @@
             <tbody>
               <tr>
                 {{#each fridge}}
-                    {{> components/fridgerow-template}}
+                {{> components/fridgerow-template}}
                 {{/each}}
               </tr>
             </tbody>
           </table>
         </div>
+
+        {{!-- TOM NEW API DIV --}}
+
+        <div class="container justify-content-center text-center">
+          <div stlye="background-light"> Need a snack suggestion? Enter an ingredient here!</div>
+          <form id="target">
+            <input type="text" id="food-input" placeholder="Enter Ingredient">
+            <input type="submit" value="Go">
+          </form>
+          <div id="recipe-landing"></div>
+        </div>
+
+        {{!-- TOM NEW API DIV --}}
+
 
       </div>
     </div>
