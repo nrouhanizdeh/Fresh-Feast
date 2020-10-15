@@ -56,13 +56,17 @@ $(document).ready(function () {
 				//newItem.foodName = $(this).val();
 			}
 		});
+			edited[2] = date.addDays(parseInt(edited[1]));
+			edited[3] = date.addDays(parseInt(edited[1])).toLocaleDateString();
 		$.ajax({
 			method: "PUT",
 			url: "/api/items/" + id,
-			data: { foodName: edited[0], days: edited[1] }
+			data: { foodName: edited[0], days: edited[1], expireDate: edited[2], expireString: edited[3] }
 		})
 			.then(function () {
-				console.log("updated successfully")
+				console.log("updated successfully");
+				console.log("hi" + edited[2]);
+				console.log(edited[3]);
 			});
 	var inputFoodName = $(this).parents("tr").find('input[name="foodName"]');
 	inputFoodName.each(function () {
@@ -86,7 +90,6 @@ $(document).ready(function () {
 		$(".add-new").removeAttr("disabled");
 	}
 	submitItem(newItem);
-	console.log("hello" + newItem.foodName);
 });
 // Edit row on edit button click
 $(document).on("click", ".edit", function () {
