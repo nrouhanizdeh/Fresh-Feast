@@ -48,10 +48,11 @@ THEN I am logged out of the application and routed to the Login Page
 Log In
 Sign-Up
 Members (Fridge Empty)
+images/Fridge Empty.png
 Members (Fridge Full Expanded)
 About Us
 Mobile
 
 
-<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/Night-In%20(5).gif?raw=true"></img>
+<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/images/Fridge Empty.png<\img>
 
