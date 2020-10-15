@@ -130,6 +130,7 @@ $(document).ready(function () {
 		$(".add-new").removeAttr("disabled");
 	}
 	submitItem(newItem);
+	location.reload();
 });
 // Edit row on edit button click
 $(document).on("click", ".edit", function () {
