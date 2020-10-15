@@ -7,7 +7,7 @@ $(document).ready(function () {
 	}
 
 	// expiration
-	Date.prototype.addDays = function(days) {
+	Date.prototype.addDays = function (days) {
 		var date = new Date(this.valueOf());
 		date.setDate(date.getDate() + days);
 		return date;
@@ -42,8 +42,12 @@ $(document).ready(function () {
 	// Add row on add button click
 	$(document).on("click", ".add", function () {
 		var empty = false;
+		var edited = [];
+		var id = $(this).parent().data("id");
+		console.log(id);
 		var input = $(this).parents("tr").find('input');
 		input.each(function () {
+			edited.push($(this).val());
 			if (!$(this).val()) {
 				$(this).addClass("error");
 				empty = true;
@@ -52,72 +56,76 @@ $(document).ready(function () {
 				//newItem.foodName = $(this).val();
 			}
 		});
-		
-		var inputFoodName = $(this).parents("tr").find('input[name="foodName"]');
-		inputFoodName.each(function () {
-				newItem.foodName = $(this).val();
-		});
-		var inputDays = $(this).parents("tr").find('input[name="days"]');
-		inputDays.each(function () {
-				newItem.days = $(this).val();
-				newItem.expireDate = date.addDays(parseInt($(this).val()));
-				newItem.expireString = date.addDays(parseInt($(this).val())).toLocaleDateString();
-		});
-
-		$(this).parents("tr").find(".error").first().focus();
-		if (!empty) {
-			input.each(function () {
-				$(this).parent("td").html($(this).val());
-			});
-			$(this).parents("tr").find(".add, .edit").toggle();
-			$(".add-new").removeAttr("disabled");
-		}
-		submitItem(newItem);
-	});
-	// Edit row on edit button click
-	$(document).on("click", ".edit", function () {
-		$(this).parents("tr").find("td:not(:last-child)").each(function () {
-			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-		});
-		$(this).parents("tr").find(".add, .edit").toggle();
-		var id = $(this).parent().data("id");
-		console.log(id);
-		$(".add-new").attr("disabled", "disabled");
 		$.ajax({
 			method: "PUT",
 			url: "/api/items/" + id,
-			// data: post
-		  })
-			.then(function() {
+			data: { foodName: edited[0], days: edited[1] }
+		})
+			.then(function () {
 				console.log("updated successfully")
 			});
-		});
-
-		var inputFoodName = $(this).parents("tr").find('input[name="foodName"]');
-		inputFoodName.each(function () {
-				updatedItem.foodName = $(this).val();
-		});
-		var inputDays = $(this).parents("tr").find('input[name="days"]');
-		inputDays.each(function () {
-				updatedItem.days = $(this).val();
-				updatedItem.expireDate = date.addDays(parseInt($(this).val()));
-				updatedItem.expireString = date.addDays(parseInt($(this).val())).toLocaleDateString();
+	var inputFoodName = $(this).parents("tr").find('input[name="foodName"]');
+	inputFoodName.each(function () {
+		newItem.foodName = $(this).val();
+		console.log("food", inputFoodName.val())
 	});
+	var inputDays = $(this).parents("tr").find('input[name="days"]');
+	inputDays.each(function () {
+		newItem.days = $(this).val();
+		newItem.expireDate = date.addDays(parseInt($(this).val()));
+		newItem.expireString = date.addDays(parseInt($(this).val())).toLocaleDateString();
+		console.log(inputDays.val())
 
-	// line 77 -- is this getting an id? Who is the "parent"?
-	// what is the variable to send information to database when calling on get method?
-
-	// Delete row on delete button click
-	$(document).on("click", ".delete", function () {
-		$(this).parents("tr").remove();
+	});
+	$(this).parents("tr").find(".error").first().focus();
+	if (!empty) {
+		input.each(function () {
+			$(this).parent("td").html($(this).val());
+		});
+		$(this).parents("tr").find(".add, .edit").toggle();
 		$(".add-new").removeAttr("disabled");
-		var id = $(this).parent().data("id");
-		$.ajax({
-		  method: "DELETE",
-		  url: "/api/items/" + id
-		})
-		  .then(
-			  console.log("deleted successfully!")
-		  );
+	}
+	submitItem(newItem);
+	console.log("hello" + newItem.foodName);
+});
+// Edit row on edit button click
+$(document).on("click", ".edit", function () {
+	$(this).parents("tr").find("td:not(:last-child)").each(function () {
+		console.log($(this).val());
+		$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
 	});
+	$(this).parents("tr").find(".add, .edit").toggle();
+	var id = $(this).parent().data("id");
+	console.log(id);
+	$(".add-new").attr("disabled", "disabled");
+});
+
+var inputFoodName = $(this).parents("tr").find('input[name="foodName"]');
+inputFoodName.each(function () {
+	updatedItem.foodName = $(this).val();
+	console.log(inputFoodName);
+});
+var inputDays = $(this).parents("tr").find('input[name="days"]');
+inputDays.each(function () {
+	updatedItem.days = $(this).val();
+	updatedItem.expireDate = date.addDays(parseInt($(this).val()));
+	updatedItem.expireString = date.addDays(parseInt($(this).val())).toLocaleDateString();
+});
+
+// line 77 -- is this getting an id? Who is the "parent"?
+// what is the variable to send information to database when calling on get method?
+
+// Delete row on delete button click
+$(document).on("click", ".delete", function () {
+	$(this).parents("tr").remove();
+	$(".add-new").removeAttr("disabled");
+	var id = $(this).parent().data("id");
+	$.ajax({
+		method: "DELETE",
+		url: "/api/items/" + id
+	})
+		.then(
+			console.log("deleted successfully!")
+		);
+});
 });
