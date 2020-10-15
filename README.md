@@ -42,16 +42,24 @@ THEN I am logged out of the application and routed to the Login Page
  ### User Flow Diagram
  
  User Flow Diagrams
+<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/User Flow Diagram.png"></img>
 
 ### Visualizations
 
 Log In
+<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/Home Page.png"></img>
+
 Sign-Up
+<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/Sign Up.png"></img>
+
 Members (Fridge Empty)
+<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/">Fridge Empty.png</img>
+
 Members (Fridge Full Expanded)
-About Us
+<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/">Fridge full.png</img>
+
 Mobile
+<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/">Mobile Fridge Full</img>
 
 
-<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/Night-In%20(5).gif?raw=true"></img>
 
