@@ -7,7 +7,7 @@ Fresh-Feast is a grocery efficiency aide that helps the end user keep track of t
 ```
 
 ### Live Link to Deployed App
-[Fresh Feast App](www.heroku.com)
+[Fresh Feast App](https://fresh-feast.herokuapp.com/)
 
 ### Technologies Utilized
 
