@@ -6,36 +6,44 @@ $(document).ready(function () {
 		);
 	}
 
+	$("#foodHelp").on('click', function () {
+		var modal = document.getElementById("table-wripper");
+		var buttonn = document.getElementById("foodHelp");
+		modal.style.display = "inline";
+		buttonn.style.display = "none";
+	});
+
 	// food recommender api call and jquery
-	$("#target").on('submit', function() {
+	$("#target").on('submit', function () {
 		//user input
 		var food = $("#food-input").val().trim();
 		// ** NEED TO HIDE/OBFUSCATE THE API KEY**
 		var apiKey = "3c464bcba4d5470caed86dd2bb61810a"
 		// spoontacular api call to return 15 different foods based on search terms
-		var imageURL = "https://api.spoonacular.com/food/products/suggest?query=" + food + "&number=15&apiKey=" + apiKey
+		var imageURL = "https://api.spoonacular.com/food/products/suggest?query=" + food + "&number=20&apiKey=" + apiKey
 		//prototype function to capitaliza string
-		String.prototype.capitalize = function() {
+		String.prototype.capitalize = function () {
 			return this.charAt(0).toUpperCase() + this.slice(1)
-		  }
-		  //ajax call
+		}
+		//ajax call
 		$.ajax({
 			url: imageURL,
 			method: "GET"
-		  })
+		})
 			.then(function (response) {
 				//randomly selects one of the 15 api results
-			  i = Math.floor(Math.random() * 15)
-			  var answered = (response.results[i].title).capitalize()
-			    // writes to members-template.handlebars
-			  $("#recipe-landing").text(answered);
-		
+				i = Math.floor(Math.random() * 20)
+				var answered = (response.results[i].title).capitalize()
+				// writes to members-template.handlebars
+				$("#recipe-header").text("Fresh-Feast Recommends...");
+				$("#recipe-landing").text(answered);
+
 			});
-			// prevents the search button from reloading the entire page
+		// prevents the search button from reloading the entire page
 		return false;
-	   });
-	
-		
+	});
+
+
 
 
 
@@ -99,7 +107,6 @@ $(document).ready(function () {
 			.then(function () {
 				console.log("updated successfully");
 				console.log("hi" + edited[2]);
-				console.log(edited[3]);
 			});
 	var inputFoodName = $(this).parents("tr").find('input[name="foodName"]');
 	inputFoodName.each(function () {
