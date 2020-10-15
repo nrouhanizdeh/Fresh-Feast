@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 	function submitItem(Item) {
 		$.post("/api/items/", Item).then(
-			// console.log("success");
+			console.log("success")
 		);
 	}
 
@@ -16,6 +16,7 @@ $(document).ready(function () {
 	var date = new Date();
 
 	var newItem = {};
+	var updatedItem = {};
 	//$('[data-toggle="tooltip"]').tooltip();
 	var actions = $("table td:last-child").html();
 	// Append table with add row form on add new button click
@@ -28,7 +29,7 @@ $(document).ready(function () {
 			//'<td></td>' +
 			'<td>' +
 			'<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>' +
-			//'<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>' +
+			// '<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>' +
 			'<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>' +
 			'</td>' +
 			'</tr>';
@@ -74,13 +75,38 @@ $(document).ready(function () {
 		submitItem(newItem);
 	});
 	// Edit row on edit button click
-	// $(document).on("click", ".edit", function () {
-	// 	$(this).parents("tr").find("td:not(:last-child)").each(function () {
-	// 		$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-	// 	});
-	// 	$(this).parents("tr").find(".add, .edit").toggle();
-	// 	$(".add-new").attr("disabled", "disabled");
-	// });
+	$(document).on("click", ".edit", function () {
+		$(this).parents("tr").find("td:not(:last-child)").each(function () {
+			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+		});
+		$(this).parents("tr").find(".add, .edit").toggle();
+		var id = $(this).parent().data("id");
+		console.log(id);
+		$(".add-new").attr("disabled", "disabled");
+		$.ajax({
+			method: "PUT",
+			url: "/api/items/" + id,
+			// data: post
+		  })
+			.then(function() {
+				console.log("updated successfully")
+			});
+		});
+
+		var inputFoodName = $(this).parents("tr").find('input[name="foodName"]');
+		inputFoodName.each(function () {
+				updatedItem.foodName = $(this).val();
+		});
+		var inputDays = $(this).parents("tr").find('input[name="days"]');
+		inputDays.each(function () {
+				updatedItem.days = $(this).val();
+				updatedItem.expireDate = date.addDays(parseInt($(this).val()));
+				updatedItem.expireString = date.addDays(parseInt($(this).val())).toLocaleDateString();
+	});
+
+	// line 77 -- is this getting an id? Who is the "parent"?
+	// what is the variable to send information to database when calling on get method?
+
 	// Delete row on delete button click
 	$(document).on("click", ".delete", function () {
 		$(this).parents("tr").remove();

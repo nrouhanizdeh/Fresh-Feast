@@ -59,6 +59,13 @@ h5 {
     50% { border-color: #cbb7d1; }
   }
 
+  footer {
+    background-color: #cbb7d1;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: right;
+    padding: 5px;
+  }
+
 
 
 /* -------------- */

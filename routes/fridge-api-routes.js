@@ -87,7 +87,7 @@ module.exports = function(app) {
   });
 
   // PUT route for updating items
-  app.put("/api/items", function(req, res) {
+  app.put("/api/items/:id", function(req, res) {
 
     if (!req.user) {
         // The user is not logged in, send back an empty object
