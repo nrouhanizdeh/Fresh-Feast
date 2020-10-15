@@ -72,6 +72,13 @@ h5 {
   #start-screen:hover {
       opacity:1;
   }
+
+  #recipe-landing {
+    background-color: #ffffff;
+    display: inline-block;
+    font-size: small;
+    font-style: italic;
+  }
  
   .transbox {
     background-color: #ffffff;
@@ -238,6 +245,25 @@ h5 {
         background: #fff;
         padding: 20px;	
         box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .table-wripper {
+      display: none;
+    }
+    .table-wropper {
+      display: inline;
+    }
+    .table-wrupper {
+      display:inline-flexbox;
+      font-size: small;
+      font-style: italic;
+      margin: 30px auto;
+          background: #fff;
+          padding: 20px;	
+          box-shadow: 0 1px 1px rgba(0,0,0,.05);
+      }
+
+      .table-wrupper:hover {
+        opacity:1;
     }
     .table-title {
         padding-bottom: 10px;
