@@ -6,6 +6,39 @@ $(document).ready(function () {
 		);
 	}
 
+	// food recommender api call and jquery
+	$("#target").on('submit', function() {
+		//user input
+		var food = $("#food-input").val().trim();
+		// ** NEED TO HIDE/OBFUSCATE THE API KEY**
+		var apiKey = "3c464bcba4d5470caed86dd2bb61810a"
+		// spoontacular api call to return 15 different foods based on search terms
+		var imageURL = "https://api.spoonacular.com/food/products/suggest?query=" + food + "&number=15&apiKey=" + apiKey
+		//prototype function to capitaliza string
+		String.prototype.capitalize = function() {
+			return this.charAt(0).toUpperCase() + this.slice(1)
+		  }
+		  //ajax call
+		$.ajax({
+			url: imageURL,
+			method: "GET"
+		  })
+			.then(function (response) {
+				//randomly selects one of the 15 api results
+			  i = Math.floor(Math.random() * 15)
+			  var answered = (response.results[i].title).capitalize()
+			    // writes to members-template.handlebars
+			  $("#recipe-landing").text(answered);
+		
+			});
+			// prevents the search button from reloading the entire page
+		return false;
+	   });
+	
+		
+
+
+
 	// expiration
 	Date.prototype.addDays = function (days) {
 		var date = new Date(this.valueOf());
