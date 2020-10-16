@@ -11,7 +11,9 @@ An App by:
 ### Project Description
 
 ```
+
 Fresh-Feast is a grocery efficiency aide that helps the end user keep track of their current grocery produce. The application provides the end user the ability to add/remove items from their virtual fridge, returns valuable information regarding the product, including expiration and consumption and waste statistics. 
+
 ```
 
 ### Live Link to Deployed App
@@ -21,6 +23,15 @@ Fresh-Feast is a grocery efficiency aide that helps the end user keep track of t
 [Spoontacular API Link](https://spoonacular.com/food-api)
 
 ### Technologies Utilized
+
+  - Node
+  - Express
+  - Passport
+  - Sequelize
+  - SQL
+  - Heroku
+  - JawsDB
+  
 [Spoonacular API](https://spoonacular.com/food-api/)
 
 
@@ -46,21 +57,22 @@ THEN I am logged out of the application and routed to the Login Page
 
 ```
  
- ### User Flow Diagram
+### User Flow Diagram
  
- [User Flow Diagrams](/images/User Flow Diagram.png)
+![Alt User Flow](/images/User-Flow-Diagram.png)
 
 ### Visualizations
 
-[Log In](/images/Home Page.png)
+![Log In](Fresh-Feast/images/Home-Page.png)
 
-[Sign-Up](/images/Sign Up.png)
+![Sign-Up](/images/Sign-Up.png)
 
-[Members Fridge Empty](/images/Fridge Empty.png)
+![Members Fridge Empty](/images/Fridge-Empty.png)
 
-[Members Fridge Full Expanded](/images/Fridge full.png)
+![Members Fridge Full Expanded](/images/Full-Fridge-Snack-Results.png)
 
-[Mobile](/images/Mobile Fridge Full.png)
+![Mobile](/images/Mobile-Fridge-Full.png)
+
 
 
 

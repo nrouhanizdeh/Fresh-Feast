@@ -15,11 +15,10 @@ $(document).ready(function () {
 
 	// food recommender api call and jquery
 	$("#target").on('submit', function () {
-		//user input
-		var food = $("#food-input").val().trim();
-		// ** NEED TO HIDE/OBFUSCATE THE API KEY**
+
+		// ******This API Key will no longer work as it was tied to Simonthm5's personal account"*******//
+		
 		var apiKey = "3c464bcba4d5470caed86dd2bb61810a"
-		// spoontacular api call to return 15 different foods based on search terms
 		var imageURL = "https://api.spoonacular.com/food/products/suggest?query=" + food + "&number=20&apiKey=" + apiKey
 		//prototype function to capitaliza string
 		String.prototype.capitalize = function () {
