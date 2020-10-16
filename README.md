@@ -1,5 +1,11 @@
 # Fresh Feast
-[GitHub Repository(https://github.com/nrouhanizdeh/Fresh-Feast)
+[GitHub Repository](https://github.com/nrouhanizdeh/Fresh-Feast)
+
+An App by:
+@nrouhanizdeh
+@carolinestrickland
+@simonthm5
+@bmartinez2018
 
 
 ### Project Description
@@ -15,6 +21,7 @@ Fresh-Feast is a grocery efficiency aide that helps the end user keep track of t
 [Spoontacular API Link](https://spoonacular.com/food-api)
 
 ### Technologies Utilized
+[Spoonacular API](https://spoonacular.com/food-api/)
 
 
 ### User Story
@@ -41,25 +48,19 @@ THEN I am logged out of the application and routed to the Login Page
  
  ### User Flow Diagram
  
- User Flow Diagrams
-<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/User Flow Diagram.png"></img>
+ [User Flow Diagrams](/images/User Flow Diagram.png)
 
 ### Visualizations
 
-Log In
-<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/Home Page.png"></img>
+[Log In](/images/Home Page.png)
 
-Sign-Up
-<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/Sign Up.png"></img>
+[Sign-Up](/images/Sign Up.png)
 
-Members (Fridge Empty)
-<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/">Fridge Empty.png</img>
+[Members Fridge Empty](/images/Fridge Empty.png)
 
-Members (Fridge Full Expanded)
-<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/">Fridge full.png</img>
+[Members Fridge Full Expanded](/images/Fridge full.png)
 
-Mobile
-<img src="https://github.com/nrouhanizdeh/Night-In-App/blob/master/images/">Mobile Fridge Full</img>
+[Mobile](/images/Mobile Fridge Full.png)
 
 
 
